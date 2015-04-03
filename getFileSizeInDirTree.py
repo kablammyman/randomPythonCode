@@ -24,8 +24,9 @@ for path, dirs, files in os.walk(path):
   #print path
   for f in files:
 	fileSize = os.path.getsize(path+"\\"+f)
-	if((fileSize/1024) < 50 ):
-		fo.write (f + "size: " + str() + "mb\n")
+	fileSize/=1024
+	if(fileSize < 50 ):
+		fo.write (f + "size: " + str(fileSize) + " mb\n")
 print("done!")
 fo.close()	
 	
