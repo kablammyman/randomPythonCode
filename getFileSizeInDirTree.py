@@ -23,10 +23,14 @@ print("processing...")
 for path, dirs, files in os.walk(path):
   #print path
   for f in files:
-	fileSize = os.path.getsize(path+"\\"+f)
+	fileString = path+"\\"+f
+	fileSize = os.path.getsize(fileString)
 	fileSize/=1024
-	if(fileSize < 50 ):
-		fo.write (path+"\\"+f + " : " + str(fileSize) + " mb\n")
+	if(fileSize < 35):
+		fo.write (fileString + " : " + str(fileSize) + " kb\n")
+		if(fileSize < 10):
+			os.remove(fileString)
+		
 print("done!")
 fo.close()	
 	
