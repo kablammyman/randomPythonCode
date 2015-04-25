@@ -1,5 +1,5 @@
 # !/usr/bin/python
-
+#move an image that was saved in its own folder to its proper gallery
 import os, sys
 import shutil
 
