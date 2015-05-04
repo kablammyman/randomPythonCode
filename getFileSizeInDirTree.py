@@ -26,10 +26,10 @@ for path, dirs, files in os.walk(path):
 	fileString = path+"\\"+f
 	fileSize = os.path.getsize(fileString)
 	fileSize/=1024
-	if(fileSize < 35):
+	if(fileSize < 3):
 		fo.write (fileString + " : " + str(fileSize) + " kb\n")
-		if(fileSize < 10):
-			os.remove(fileString)
+		#if(fileSize < 2):
+		#	os.remove(fileString)
 		
 print("done!")
 fo.close()	

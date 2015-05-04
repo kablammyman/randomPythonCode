@@ -1,12 +1,18 @@
 # !/usr/bin/python
-#move an image that was saved in its own folder to its proper gallery
+#move images that are saved in its own folder to its proper gallery
 import os, sys
 import shutil
 
-file = open('addGalleryName.txt', 'r')
+fileName = 'addGalleryName.txt'
+file = open(fileName, 'r')
+lines = file.readlines()
+file.close()
+
+file = open(fileName, 'w')
+
 index = 0;
 galleryName = "generated"
-for line in file:
+for line in lines:
 	curPath = line.rstrip('\n')
 	print curPath
 	#os.chdir(curPath)
@@ -25,6 +31,7 @@ for line in file:
 				shutil.move(file,newDir)
 			except:
 				print "couldnt move: " + file + "\nto\n"+newDir 
+				file.write(curPath+"\n")
 
 	index+=1
-	
+file.close()	

@@ -1,5 +1,6 @@
 # !/usr/bin/python
-#move an image that was saved in its own folder to its proper gallery
+#move an image that was saved in its own folder to its proper gallery...this only works for galleries that 
+#we know the model's name
 import os, sys
 import shutil
 
@@ -15,11 +16,20 @@ for line in lines:
 	curPath = line.rstrip('\n')
 	print curPath
 
-	if curPath.rfind("models") == -1:
+	modelsIndex = curPath.rfind("models")
+	starsIndex = curPath.rfind("porn stars")
+	amIndex = curPath.rfind("amatuer models")
+	
+	if modelsIndex == -1 and starsIndex == -1 and amIndex == -1:
 		file.write(curPath+"\n")
 		continue
+	
+	
+	if modelsIndex == -1:
+		modelsIndex = starsIndex;
+	if modelsIndex == -1:
+		modelsIndex = amIndex;
 		
-	modelsIndex = curPath.rfind("models")
 	modelNameIndex = curPath.find("\\", modelsIndex + 2)
 	galleryNameIndex = curPath.find("\\", modelNameIndex + 2)
 	endOfString = curPath.find("\\", galleryNameIndex + 2)
