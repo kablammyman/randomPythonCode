@@ -14,7 +14,7 @@ file = open(fileName, 'w')
 
 for line in lines:
 	curPath = line.rstrip('\n')
-	print curPath
+	#print curPath
 
 	modelsIndex = curPath.rfind("models")
 	starsIndex = curPath.rfind("porn stars")
@@ -38,7 +38,7 @@ for line in lines:
 	galDel = curPath.find("\\", endOfString + 2)
 	delGallery = curPath[0:galDel]
 	
-	print destGallery
+	#print destGallery
 	
 	moved = False
 	for path, dirs, files in os.walk(curPath):

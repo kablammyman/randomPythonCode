@@ -2,6 +2,7 @@ import os
 import sys
 
 path = raw_input( "Enter a file path: ")
+#minNumFiles = raw_input( "Enter a the minimum amount of files a folder needs: ")
 fo = open("fewFiles.txt", "w")
 print("processing...")
 

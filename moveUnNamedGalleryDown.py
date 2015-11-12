@@ -61,7 +61,7 @@ for line in lines:
 			curFile = (curPath+"\\"+f)
 			source = os.path.join(curPath, curFile)
 			
-			#print "spurce: "+ source + "\ndest: " + destination
+			#print "source: "+ source + "\ndest: " + destination
 			try:
 				if os.path.isfile(destGallery+"\\"+f):
 					delList.append(delGallery)
