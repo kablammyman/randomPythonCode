@@ -10,6 +10,6 @@ print("processing...")
 for path, dirs, files in os.walk(path):
 	count = len(files)
 	if(count < 5 and len(dirs) == 0):
-		fo.write (path + " : " + str(count) + "\n")
+		fo.write (path + "| " + str(count) + "\n")
 print("done!")
 fo.close()	

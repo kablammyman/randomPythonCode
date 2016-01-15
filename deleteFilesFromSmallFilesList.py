@@ -6,9 +6,9 @@ file = open("fewfiles.txt", "r")
 print("processing...")
 
 for line in file:
-	line = line.split(":", 1)
+	line = line.split("|", 1)
 	path = line[0].split("\n",1)
-	cleanPath =  path[0]
+	cleanPath =  path[0].rstrip()
 	print cleanPath
 	shutil.rmtree(cleanPath)
 		
